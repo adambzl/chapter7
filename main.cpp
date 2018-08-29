@@ -2,6 +2,9 @@
 #include "Screen.h"
 #include "Person.h"
 #include "practice.h"
+#include <map>
+#include <utility>
+#include <iostream>
 
 
 int main() {

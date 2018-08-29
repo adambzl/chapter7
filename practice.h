@@ -23,3 +23,15 @@ void countWords();
 std::vector<int> twoSum(std::vector<int>& nums, int target);
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2);
 int lengthOfLongestSubstring(std::string s);
+
+#ifndef _Example
+#define _Example
+
+class Example {
+public:
+	static double rate;
+	static const int vecSize = 20;
+	static std::vector<double> vec;
+};
+
+#endif

@@ -1,4 +1,5 @@
 #include <string>
+#include <iostream>
 #ifndef _Person
 #define _Person
 class Person {
@@ -19,8 +20,11 @@ public:
 	//声明时通过default表明默认行为，定义由编译器自动生成
 	//若有in-class initializer则使用其初始化
 	//否则采用默认初始化
-	Person(std::istream &in);
+	explicit Person(std::istream &in);
+	//不应该允许从std::istream对象到Person类对象的隐式类型转换发生，因此声明时应该为explicit
 	Person(const std::string &name_in, const std::string &address_in):name(name_in), address(address_in){}
+	//同一个作用域中函数的每个默认参数只可以被声明一次，后续可以不断地进行补充
+	//定义的过程也包含了一次声明
 
 	friend std::istream& read(std::istream &in, Person &person);
 	friend std::ostream& print(std::ostream &out, const Person& person);

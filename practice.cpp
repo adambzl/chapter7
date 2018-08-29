@@ -13,6 +13,10 @@ using std::endl;
 using std::string;
 using std::vector;
 
+//定义类中的静态成员变量
+//并对其中的非常量进行初始化
+double Example::rate = 6.5;
+vector<double> Example::vec(vecSize);
 
 void countWords() {
 	//统计输入的单词数，忽略is are was were
@@ -54,7 +58,7 @@ vector<int> twoSum(vector<int>& nums, int target) {
 ListNode* addTwoNumbers(ListNode* l1, ListNode* l2) {
 	ListNode *add1 = l1;
 	ListNode *add2 = l2;
-	ListNode *result = nullptr, *pos;
+	ListNode *result = nullptr, *pos = nullptr;
 	int temp = 0;
 	while (add1 || add2 || temp) {
 		if (add1) {
